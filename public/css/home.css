@@ -1,0 +1,36 @@
+.centered {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.footered {
+    position: fixed;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu_bar {
+    position: fixed;
+    top: 7%;
+    right: 4%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+    /* For mobile phones: */
+    .centered {
+        /* width: 70% !important; */
+    }
+}
+
+
+.dropdown-menu.show {
+    margin-top: 14px !important;
+}

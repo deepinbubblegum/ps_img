@@ -1,0 +1,13 @@
+.bg_template_img {
+    background-color: #D9D9D9;
+    color: #EB4335;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.text_template_img {
+    font-size: 7rem;
+}

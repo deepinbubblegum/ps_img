@@ -1,0 +1,25 @@
+.col_img {
+    height: 104px;
+    width: 140px;
+}
+
+.col_img img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+}
+
+
+
+.rotate-col-two {
+    /* transform: rotate(-270deg) translateX(0%); */
+    transform: rotate(-270deg) translateX(33.3%) translateY(56.5%);
+    width: 61vh;
+}
+
+.rotate-col-three {
+    /* transform: rotate(-270deg) translateX(0%); */
+    transform: rotate(-270deg) translateX(35.4%) translateY(42%);
+    width: 55vh;
+}

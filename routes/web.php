@@ -14,5 +14,69 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('view_img_5.home');
+});
+
+
+Route::get('/img_5_takephoto', function () {
+    return view('view_img_5.img_5_takephoto');
+});
+
+
+Route::get('/preview_video', function () {
+    return view('view_img_5.preview_video');
+});
+
+
+Route::get('/preview_photo', function () {
+    return view('view_img_5.preview_photo');
+});
+
+
+
+Route::get('/emoji', function () {
+    return view('emoji');
+});
+
+
+// ------------------------IMG 8
+
+Route::get('picture_8', function () {
+    // return view('welcome');
+    return view('view_img_8.img_8_home');
+});
+
+
+Route::get('/img_8_takephoto', function () {
+    return view('view_img_8.img_8_takephoto');
+});
+
+
+Route::get('/preview_video_8', function () {
+    return view('view_img_8.preview_video_8');
+});
+
+Route::get('/preview_photo_8', function () {
+    return view('view_img_8.preview_photo_8');
+});
+
+
+
+// ------------------------Video
+
+Route::get('/video', function () {
+    // return view('welcome');
+    return view('video.4k_home');
+});
+
+
+Route::get('/4k_takephoto', function () {
+    // return view('welcome');
+    return view('video.4k_takephoto');
+});
+
+Route::get('/4k_preview', function () {
+    // return view('welcome');
+    return view('video.4k_preview');
 });
