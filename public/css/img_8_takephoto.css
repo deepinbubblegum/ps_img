@@ -1,0 +1,64 @@
+.centered {
+    position: fixed;
+    top: 26%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.footered {
+    position: fixed;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu_bar {
+    position: fixed;
+    top: 7%;
+    right: 4%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.numberCircle {
+    border-radius: 50%;
+    width: 30rem !important;
+    height: 30rem !important;
+    padding: 8rem;
+    background: #fff;
+    border: 1rem solid #666;
+    color: #666;
+    text-align: center !important;
+    font: 10rem Arial, sans-serif;
+}
+
+.img_set_size {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    /* For mobile phones: */
+    .numberCircle {
+        border-radius: 50%;
+        /* width: 36px; */
+        /* height: 36px; */
+        padding: 10rem;
+        background: #fff;
+        border: 2px solid #666;
+        color: #666;
+        text-align: center;
+        font: 32px Arial, sans-serif;
+    }
+}
+
+.col_8p {
+    width: 12.5%;
+}
