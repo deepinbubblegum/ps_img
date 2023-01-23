@@ -154,12 +154,11 @@
             var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
 
             let option = {
-                allowTaint: true,
-                useCors: false,
+
             }
 
             html2canvas($("#div_pdf")[0], option).then(function (canvas) {
-                var imgData = canvas.toDataURL("image/jpeg", 1.0);
+                var imgData = canvas.toDataURL("image/png");
 
                 try {
                     var pdf = new jsPDF('l', 'pt', [PDF_Width, PDF_Height]);
