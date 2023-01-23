@@ -115,6 +115,7 @@
 <script>
     $(document).ready(function () {
 
+        $(".background_loading").css("display", "block");
         API_SaveImg();
 
         function API_SaveImg() {
@@ -130,8 +131,6 @@
         }
 
         function API_takeImg(data) {
-            $(".background_loading").css("display", "block");
-
             for (let i = 1; i < 6; i++) {
                 let class_n = `.preview_${i}`
                 $(class_n).each(function () {
@@ -141,6 +140,7 @@
                     });
                 });
             }
+            $(".background_loading").css("display", "none");
         }
 
 
