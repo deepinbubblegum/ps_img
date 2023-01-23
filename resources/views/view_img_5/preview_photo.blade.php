@@ -155,7 +155,7 @@
 
             let option = {
                 allowTaint: true,
-                useCors: true,
+                useCors: false,
             }
 
             html2canvas($("#div_pdf")[0], option).then(function (canvas) {
