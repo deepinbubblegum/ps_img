@@ -134,11 +134,27 @@
                 let class_n = `.preview_${i}`
                 $(class_n).each(function () {
                     url = `${data}/images/image0${i}.jpg`
-                    $(this).attr('src', url)
+                    getBase64FromUrl(url).then((base64) => {
+                        $(this).attr('src', base64)
+                    });
                 });
             }
         }
 
+
+
+        const getBase64FromUrl = async (url) => {
+            const data = await fetch(url);
+            const blob = await data.blob();
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = () => {
+                    const base64data = reader.result;
+                    resolve(base64data);
+                }
+            });
+        }
 
 
         //Create PDf from HTML...
@@ -170,6 +186,7 @@
                         //     4), canvas_image_width, canvas_image_height);
                     }
                     pdf.save("Image.pdf");
+                    $(".background_loading").css("display", "none");
                 } catch (e) {
                     console.log(e);
                 }
@@ -178,6 +195,8 @@
 
         $('#cmd').click(function () {
             CreatePDFfromHTML()
+
+            $(".background_loading").css("display", "block");
 
             setTimeout(function () {
                 // your_func();
