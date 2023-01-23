@@ -116,7 +116,7 @@
         API_SaveImg();
 
         function API_SaveImg() {
-            axios.post('http://127.0.0.1:5000/save-2storage')
+            axios.get('http://127.0.0.1:5000/save-2storage')
                 .then((response) => {
                     API_takeImg(response.data.message);
                 })
