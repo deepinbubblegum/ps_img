@@ -20,8 +20,7 @@
             {{-- <iframe src="{{ url('https://www.youtube.com/embed/5Peo-ivmupE') }}" width="560" height="315"
             frameborder="0" allowfullscreen></iframe> --}}
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="{{ url('https://www.youtube.com/embed/5Peo-ivmupE') }}"
-                    allowfullscreen style="
+                <iframe class="embed-responsive-item" id="frame_video" src="" allowfullscreen style="
                     width: 800px;
                     height: 500px;
                 ">
@@ -31,8 +30,7 @@
             <div class="container px-4 text-center mt-3">
                 <div class="row gx-5">
                     <div class="col text-start px-0">
-                        <button type="button" class="btn btn-secondary btn-lg w-100"
-                            onclick="window.location='{{ url("/img_5_takephoto") }}'">
+                        <button type="button" class="btn btn-secondary btn-lg w-100" id="icon_camera">
                             Retake
                         </button>
                     </div>
@@ -58,9 +56,34 @@
 
 <script>
     $(document).ready(function () {
+        $(".background_loading").css("display", "block");
+
+        API_takeVideo();
+
+        function API_takeVideo() {
+            axios.get('http://127.0.0.1:5000/render-5acts-video')
+                .then((response) => {
+                    $('#frame_video').attr('src', response.data.message)
+                    $(".background_loading").css("display", "none");
+                })
+                .catch((error) => {
+                    console.log({
+                        ...error
+                    })
+                })
+
+        }
 
         $('#icon_camera').on('click', function () {
-            window.location = `{{ url('/img_5_takephoto') }}`;
+            axios.get('http://127.0.0.1:5000/retake-picture')
+                .then((response) => {
+                    window.location = `{{ url('/img_5_takephoto') }}`;
+                })
+                .catch((error) => {
+                    console.log({
+                        ...error
+                    })
+                })
         })
 
     })

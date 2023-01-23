@@ -22,7 +22,7 @@
         <div class="d-flex justify-content-center">
             <div class="numberCircle text-center"
                 style="font-size: 11rem; margin-top: 8rem; font-weight: bolder; cursor: pointer;" id="btn_upload_img">
-                <span id="text_show"> 1 </span>
+                <span id="text_show"> </span>
                 <input type="file" id="btn_upload_file" class="d-none" accept="image/png, image/jpeg" multiple>
             </div>
         </div>
@@ -85,13 +85,67 @@
 <script>
     $(document).ready(function () {
 
+        let sec = 5000;
+        let text_sec = 5
+        let take_img = 0;
+        $(".background_loading").css("background-color", "#ece8e8ed")
+
+        // var refreshIntervalId = setInterval(function () {
+        //     main()
+        // }, 1000);
+        var refreshIntervalId = null
+        refreshIntervalId = setInterval(main, 1000);
+
+
+        function main() {
+            // console.log(take_img)
+            if (take_img >= 5) {
+                clearInterval(refreshIntervalId);
+                window.location = '{{ url("/preview_video") }}';
+                return
+            }
+
+            if (text_sec == 0) {
+                API_takeImg()
+                clearInterval(refreshIntervalId);
+            }
+
+            text_sec = text_sec == 0 ? 3 : text_sec
+            $('#text_show').text(text_sec)
+            text_sec--
+        }
+
+
+        function API_takeImg() {
+            take_img++
+            $(".background_loading").css("display", "block");
+
+            // axios.get('http://127.0.0.1:5000/take-picture')
+            axios.post('/take')
+                .then((response) => {
+                    // console.log(response.data.message)
+                    url = `${response.data.message}/image0${take_img}.jpg`
+                    $(`#preview_${take_img}`).attr('src', url)
+                    $(`#preview_${take_img}`).removeClass("d-none");
+                    $(`#preview_txt_${take_img}`).addClass("d-none");
+                    $(".background_loading").css("display", "none");
+                    refreshIntervalId = setInterval(main, 1000);
+                })
+                .catch((error) => {
+                    console.log({
+                        ...error
+                    })
+                })
+
+        }
+
+
         $('#icon_camera').on('click', function () {
             window.location = `{{ url('/img_5_takephoto') }}`;
         })
 
         $('#btn_upload_img').on('click', function () {
-            // $('#btn_upload_file').click();
-            document.getElementById("btn_upload_file").click();
+            // document.getElementById("btn_upload_file").click();
         })
 
         $('.bg_template_img').each(function (index) {

@@ -22,7 +22,7 @@
         <div class="d-flex justify-content-center">
             <div class="numberCircle text-center"
                 style="font-size: 11rem; margin-top: 8rem; font-weight: bolder; cursor: pointer;" id="btn_upload_img">
-                <span id="text_show"> 1 </span>
+                <span id="text_show"> </span>
                 <input type="file" id="btn_upload_file" class="d-none" accept="image/png, image/jpeg" multiple>
             </div>
         </div>
@@ -77,9 +77,29 @@
 <script>
     $(document).ready(function () {
 
+        let sec = 5000;
+        let text_sec = 5
+
+        var refreshIntervalId = setInterval(function () {
+            main()
+        }, 1000);
+
+
+
+        function main() {
+
+            if (text_sec == 0) {
+                console.log('call Api')
+                clearInterval(refreshIntervalId);
+            }
+
+            text_sec = text_sec == 0 ? 3 : text_sec
+            $('#text_show').text(text_sec)
+            text_sec--
+        }
+
         $('#btn_upload_img').on('click', function () {
-            // $('#btn_upload_file').click();
-            document.getElementById("btn_upload_file").click();
+            // document.getElementById("btn_upload_file").click();
         })
 
         $('.bg_template_img').each(function (index) {

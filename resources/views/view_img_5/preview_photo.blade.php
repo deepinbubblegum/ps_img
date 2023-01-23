@@ -28,19 +28,19 @@
             <div class="row">
 
                 <div class="col-4" style="margin-top: 2.7rem; padding: 4rem!important;">
-                    @for ($i = 0; $i < 5; $i++) <div class="row mt-1">
+                    @for ($i = 1; $i < 6; $i++) <div class="row mt-1">
                         <div class="col col_img">
-                            <img src="{{ asset('images/4.jpg') }}" class="img-fluid" alt="...">
+                            <img src="" class="img-fluid preview_{{$i}}" id="preview_{{$i}}">
                         </div>
                         <div class="col col_img">
-                            <img src="{{ asset('images/4.jpg') }}" class="img-fluid" alt="...">
+                            <img src="" class="img-fluid preview_{{$i}}" id="preview_{{$i}}">
                         </div>
                 </div>
                 @endfor
                 <div class="row mt-1">
                     <div class="col">
                         <div class="card">
-                            <img src="{{ asset('images/4.jpg') }}" class="card-img-bottom" alt="...">
+                            <img src="" class="card-img-bottom" id="preview_qr">
                         </div>
                     </div>
                     <div class="col">
@@ -55,26 +55,26 @@
                     <div class="col">
                         <div class="row">
                             <span class="col-12 p-0">
-                                <img src="{{ asset('images/4.jpg') }}" class="img-fluid img_big_2" alt="...">
+                                <img src="" class="img-fluid img_big_2 preview_2" id="preview_2">
                             </span>
                             <span class="col-6 p-0 mt-1">
-                                <img src="{{ asset('images/4.jpg') }}" class="img-fluid img_small_2" alt="...">
+                                <img src="" class="img-fluid img_small_2 preview_3" id="preview_3">
                             </span>
                             <span class="col-6 p-0 mt-1">
-                                <img src="{{ asset('images/4.jpg') }}" class="img-fluid img_small_2" alt="...">
+                                <img src="" class="img-fluid img_small_2 preview_4" id="preview_4">
                             </span>
                         </div>
                     </div>
                     <div class="col">
                         <div class="row">
                             <span class="col-6 p-0 mb-1">
-                                <img src="{{ asset('images/4.jpg') }}" class="img-fluid img_small_2" alt="...">
+                                <img src="" class="img-fluid img_small_2 preview_4" id="preview_4">
                             </span>
                             <span class="col-6 p-0 mb-1">
-                                <img src="{{ asset('images/4.jpg') }}" class="img-fluid img_small_2" alt="...">
+                                <img src="" class="img-fluid img_small_2 preview_5" id="preview_5">
                             </span>
                             <span class="col-12 p-0">
-                                <img src="{{ asset('images/4.jpg') }}" class="img-fluid img_big_2" alt="...">
+                                <img src="" class="img-fluid img_big_2 preview_3" id="preview_3">
                             </span>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
 
             <div class="col-4 ">
                 <div class="rotate-col-three">
-                    <img src="{{ asset('images/4.jpg') }}" class="img-fluid img_big_3" alt="...">
+                    <img src="" class="img-fluid img_big_3 preview_1" id="preview_1">
                 </div>
             </div>
 
@@ -112,6 +112,34 @@
 
 <script>
     $(document).ready(function () {
+
+        API_SaveImg();
+
+        function API_SaveImg() {
+            axios.post('http://127.0.0.1:5000/save-2storage')
+                .then((response) => {
+                    API_takeImg(response.data.message);
+                })
+                .catch((error) => {
+                    console.log({
+                        ...error
+                    })
+                })
+        }
+
+        function API_takeImg(data) {
+            $(".background_loading").css("display", "block");
+
+            for (let i = 1; i < 6; i++) {
+                let class_n = `.preview_${i}`
+                $(class_n).each(function () {
+                    url = `${data}/images/image0${i}.jpg`
+                    $(this).attr('src', url)
+                });
+            }
+        }
+
+
 
         //Create PDf from HTML...
         function CreatePDFfromHTML() {
