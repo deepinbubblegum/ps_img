@@ -120,8 +120,8 @@
             take_img++
             $(".background_loading").css("display", "block");
 
-            // axios.get('http://127.0.0.1:5000/take-picture')
-            axios.post('/take')
+            axios.get('http://127.0.0.1:5000/take-picture')
+                // axios.post('/take')
                 .then((response) => {
                     // console.log(response.data.message)
                     url = `${response.data.message}/image0${take_img}.jpg`
