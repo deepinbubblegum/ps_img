@@ -94,7 +94,7 @@
         //     main()
         // }, 1000);
         var refreshIntervalId = null
-        refreshIntervalId = setInterval(main, 1000);
+        // refreshIntervalId = setInterval(main, 1000);
 
 
         function main() {

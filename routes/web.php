@@ -16,6 +16,11 @@ use App\Http\Controllers\Take_img;
 
 Route::post('/take', [Take_img::class, 'main']);
 
+Route::get('/mobile', function () {
+    return view('mobile');
+});
+
+
 Route::get('/', function () {
     // return view('welcome');
     return view('view_img_5.home');
