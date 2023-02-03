@@ -23,3 +23,10 @@
     transform: rotate(-270deg) translateX(35.4%) translateY(42%);
     width: 55vh;
 }
+
+
+
+.img_api {
+    transform: rotate(-270deg) translateX(-23%) translateY(0%);
+    width: 705px;
+}

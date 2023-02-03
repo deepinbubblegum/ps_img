@@ -27,78 +27,82 @@
         @include('component.loading')
 
         <div class="container" style="background-color: #D9D9D9; width: 1200px; height: 800px;" id="div_pdf">
-            <div class="row">
+
+            <img src="" class="img-fluid p-2 preview_ img_api" id="preview_">
+            {{-- <div class="row">
 
                 <div class="col-4" style="margin-top: 2.7rem; padding: 4rem!important;">
                     @for ($i = 1; $i < 6; $i++) <div class="row mt-1">
                         <div class="col col_img">
                             <img src="" class="img-fluid preview_{{$i}}" id="preview_{{$i}}">
-                        </div>
-                        <div class="col col_img">
-                            <img src="" class="img-fluid preview_{{$i}}" id="preview_{{$i}}">
-                        </div>
-                </div>
-                @endfor
-                <div class="row mt-1">
-                    <div class="col">
-                        <div class="card">
-                            <img src="" class="card-img-bottom" id="preview_qr">
-                        </div>
-                    </div>
-                    <div class="col">
-
-                    </div>
-                </div>
+        </div>
+        <div class="col col_img">
+            <img src="" class="img-fluid preview_{{$i}}" id="preview_{{$i}}">
+        </div>
+    </div>
+    @endfor
+    <div class="row mt-1">
+        <div class="col">
+            <div class="card">
+                <img src="" class="card-img-bottom" id="preview_qr">
             </div>
-
-
-            <div class="col-4">
-                <div class="row rotate-col-two">
-                    <div class="col">
-                        <div class="row">
-                            <span class="col-12 p-0">
-                                <img src="" class="img-fluid img_big_2 preview_2" id="preview_2">
-                            </span>
-                            <span class="col-6 p-0 mt-1">
-                                <img src="" class="img-fluid img_small_2 preview_3" id="preview_3">
-                            </span>
-                            <span class="col-6 p-0 mt-1">
-                                <img src="" class="img-fluid img_small_2 preview_4" id="preview_4">
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <span class="col-6 p-0 mb-1">
-                                <img src="" class="img-fluid img_small_2 preview_4" id="preview_4">
-                            </span>
-                            <span class="col-6 p-0 mb-1">
-                                <img src="" class="img-fluid img_small_2 preview_5" id="preview_5">
-                            </span>
-                            <span class="col-12 p-0">
-                                <img src="" class="img-fluid img_big_2 preview_3" id="preview_3">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 ">
-                <div class="rotate-col-three">
-                    <img src="" class="img-fluid img_big_3 preview_1" id="preview_1">
-                </div>
-            </div>
+        </div>
+        <div class="col">
 
         </div>
     </div>
+    </div>
+
+
+    <div class="col-4">
+        <div class="row rotate-col-two">
+            <div class="col">
+                <div class="row">
+                    <span class="col-12 p-0">
+                        <img src="" class="img-fluid img_big_2 preview_2" id="preview_2">
+                    </span>
+                    <span class="col-6 p-0 mt-1">
+                        <img src="" class="img-fluid img_small_2 preview_3" id="preview_3">
+                    </span>
+                    <span class="col-6 p-0 mt-1">
+                        <img src="" class="img-fluid img_small_2 preview_4" id="preview_4">
+                    </span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <span class="col-6 p-0 mb-1">
+                        <img src="" class="img-fluid img_small_2 preview_4" id="preview_4">
+                    </span>
+                    <span class="col-6 p-0 mb-1">
+                        <img src="" class="img-fluid img_small_2 preview_5" id="preview_5">
+                    </span>
+                    <span class="col-12 p-0">
+                        <img src="" class="img-fluid img_big_2 preview_3" id="preview_3">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4 ">
+        <div class="rotate-col-three">
+            <img src="" class="img-fluid img_big_3 preview_1" id="preview_1">
+        </div>
+    </div> --}}
+
+    </div>
+    </div>
 
     <div id="editor"></div>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-        <button class="btn btn-lg" type="button" id="cmd"
-            style="background-color: #EB4335; color:white; font-size: 1.5rem; width:15%">
-            <i class="fa-solid fa-print me-2 ms-2"></i>
-            Print
-        </button>
+    <div class="container">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+            <button class="btn btn-lg" type="button" id="cmd"
+                style="background-color: #EB4335; color:white; font-size: 1.5rem; width:15%">
+                <i class="fa-solid fa-print me-2 ms-2"></i>
+                Print
+            </button>
+        </div>
     </div>
     </div>
 
@@ -117,29 +121,34 @@
         API_SaveImg();
 
         function API_SaveImg() {
-            axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
-                .then((response) => {
-                    API_takeImg(response.data.message);
-                })
-                .catch((error) => {
-                    console.log({
-                        ...error
-                    })
-                })
+            url = `{{ asset('/images/4_5.jpg') }}`
+            $(`#preview_`).attr('src', url)
+            $(".background_loading").css("display", "none");
+            // axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
+            //     .then((response) => {
+            //         // API_takeImg(response.data.message);
+            //         url = `{{ asset('/images/4.jpg') }}`
+            //         $(`#preview_${take_img}`).attr('src', url)
+            //     })
+            //     .catch((error) => {
+            //         console.log({
+            //             ...error
+            //         })
+            //     })
         }
 
-        function API_takeImg(data) {
-            for (let i = 1; i < 6; i++) {
-                let class_n = `.preview_${i}`
-                $(class_n).each(function () {
-                    url = `http://127.0.0.1:5000/${data}`
-                    getBase64FromUrl(url).then((base64) => {
-                        $(this).attr('src', base64)
-                    });
-                });
-            }
-            $(".background_loading").css("display", "none");
-        }
+        // function API_takeImg(data) {
+        //     for (let i = 1; i < 6; i++) {
+        //         let class_n = `.preview_${i}`
+        //         $(class_n).each(function () {
+        //             url = `http://127.0.0.1:5000/${data}`
+        //             getBase64FromUrl(url).then((base64) => {
+        //                 $(this).attr('src', base64)
+        //             });
+        //         });
+        //     }
+        //     $(".background_loading").css("display", "none");
+        // }
 
 
 

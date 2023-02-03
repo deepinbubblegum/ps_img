@@ -84,7 +84,7 @@
 
                     setTimeout(function () {
                         $('#autoplay').click();
-                    }, 5000);
+                    }, 100);
                 })
                 .catch((error) => {
                     console.log({
