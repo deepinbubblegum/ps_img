@@ -20,8 +20,7 @@
             {{-- <iframe src="{{ url('https://www.youtube.com/embed/5Peo-ivmupE') }}" width="560" height="315"
             frameborder="0" allowfullscreen></iframe> --}}
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="{{ url('https://www.youtube.com/embed/5Peo-ivmupE') }}"
-                    allowfullscreen style="
+                <iframe class="embed-responsive-item" id="frame_video" src="" allowfullscreen style="
                     width: 800px;
                     height: 500px;
                 ">
@@ -59,9 +58,23 @@
 <script>
     $(document).ready(function () {
 
-        $('#icon_camera').on('click', function () {
-            window.location = `{{ url('/emoji') }}`;
-        })
+        $(".background_loading").css("display", "block");
+
+        API_takeVideo();
+
+        function API_takeVideo() {
+            axios.get('http://127.0.0.1:5000/api/render/5acts2video')
+                .then((response) => {
+                    $('#frame_video').attr('src', response.data.message)
+                    $(".background_loading").css("display", "none");
+                })
+                .catch((error) => {
+                    console.log({
+                        ...error
+                    })
+                })
+
+        }
 
     })
 

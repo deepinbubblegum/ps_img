@@ -136,7 +136,7 @@
                 // axios.post('/take')
                 .then((response) => {
                     // console.log(response.data.message)
-                    url = `${response.data.message}/image0${take_img}.jpg`
+                    url = `${response.data.message}`
                     $(`#preview_${take_img}`).attr('src', url)
                     $(`#preview_${take_img}`).removeClass("d-none");
                     $(`#preview_txt_${take_img}`).addClass("d-none");
@@ -155,91 +155,6 @@
         $('#icon_camera').on('click', function () {
             window.location = `{{ url('/img_5_takephoto') }}`;
         })
-
-        $('#btn_upload_img').on('click', function () {
-            // document.getElementById("btn_upload_file").click();
-        })
-
-        $('.bg_template_img').each(function (index) {
-            $(this).append('<input type="file" id="upload_' + (index + 1) +
-                '" class="d-none input_file_value">');
-        });
-
-        $('#btn_upload_file').on('change', function () {
-            let input = document.getElementById("btn_upload_file");
-            let files = input.files;
-
-            for (let i = 0; i < files.length; i++) {
-                let file = files[i];
-                let fileType = file["type"];
-                let validImageTypes = ["image/jpeg", "image/png"];
-                if ($.inArray(fileType, validImageTypes) < 0) {
-                    // invalid file type code goes here.
-                    continue;
-                }
-
-                let reader = new FileReader();
-                reader.onload = function () {
-                    $('.img_set_size').each(function (index) {
-                        let id = $(this).attr('id');
-                        let output = document.getElementById(id);
-                        let txt_id = $(this).closest('.card').find('.text_template_img')
-                            .attr('id')
-
-                        let secondInput_id = $(this).closest('.card').find(
-                                '.input_file_value')
-                            .attr('id')
-
-                        $('#text_show').text(index + 2)
-                        output.classList.remove("d-none");
-                        if ($(this).attr('src') == '') {
-
-                            let txt = document.getElementById(txt_id);
-
-                            txt.classList.add("d-none");
-                            output.src = reader.result;
-
-                            const dataTransfer = new DataTransfer();
-                            dataTransfer.items.add(file); //your file(s) reference(s)
-                            document.getElementById(secondInput_id).files = dataTransfer
-                                .files;
-
-                            if (index === $('.img_set_size').length - 1) {
-                                upload_img();
-                            }
-
-                            return false;
-                        }
-                    })
-                };
-                reader.readAsDataURL(file);
-            }
-
-            input.value = "";
-        })
-
-        function upload_img() {
-            $(".input_file_value").each(function () {
-                var files = $(this).get(0).files;
-                // do something with the files
-                console.log(files)
-            });
-            $(".background_loading").css("display", "block");
-
-            window.location = '{{ url("/preview_video") }}';
-        }
-
-        $(document).on('click', '.img_set_size', function () {
-            let input = $(this).closest('.card').find('.input_file_value');
-            input.click();
-        });
-
-        $(document).on('change', '.input_file_value', function () {
-            let input = document.getElementById($(this).attr('id'));
-            let files = input.files;
-            console.log(files)
-            // if (files[0] == undefined) return 0;
-        });
 
     })
 

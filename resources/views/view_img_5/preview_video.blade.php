@@ -75,7 +75,7 @@
         }
 
         $('#icon_camera').on('click', function () {
-
+            window.location = `{{ url('/img_5_takephoto') }}`;
         })
 
 
