@@ -121,20 +121,17 @@
         API_SaveImg();
 
         function API_SaveImg() {
-            url = `{{ asset('/images/4_5.jpg') }}`
-            $(`#preview_`).attr('src', url)
-            $(".background_loading").css("display", "none");
-            // axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
-            //     .then((response) => {
-            //         // API_takeImg(response.data.message);
-            //         url = `{{ asset('/images/4.jpg') }}`
-            //         $(`#preview_${take_img}`).attr('src', url)
-            //     })
-            //     .catch((error) => {
-            //         console.log({
-            //             ...error
-            //         })
-            //     })
+            axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
+                .then((response) => {
+                    // API_takeImg(response.data.message);
+                    $(`#preview_`).attr('src', `http://127.0.0.1:5000/${response.data.message}`)
+                    $(".background_loading").css("display", "none");
+                })
+                .catch((error) => {
+                    console.log({
+                        ...error
+                    })
+                })
         }
 
         // function API_takeImg(data) {

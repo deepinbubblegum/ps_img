@@ -30,7 +30,7 @@
                 </video>
             </div>
 
-            <button type="button" id="autoplay">NEXT</button>
+            <button type="button" class="d-none" id="autoplay">NEXT</button>
 
             <div class="container px-4 text-center mt-3">
                 <div class="row gx-5">
