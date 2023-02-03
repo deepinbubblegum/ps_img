@@ -20,12 +20,17 @@
             {{-- <iframe src="{{ url('https://www.youtube.com/embed/5Peo-ivmupE') }}" width="560" height="315"
             frameborder="0" allowfullscreen></iframe> --}}
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" id="frame_video" src="" allowfullscreen style="
+                {{-- <iframe class="embed-responsive-item" id="frame_video" src="" allowfullscreen style="
                     width: 800px;
                     height: 500px;
                 ">
-                </iframe>
+                </iframe> --}}
+                <video width="800" height="500" id="frame_video" autoplay loop>
+                    <source id="_video" src="{{ asset('images/SCUM   2022-12-03 19-31-28.mp4') }}" type="video/mp4" />
+                </video>
             </div>
+
+            <button type="button" id="autoplay">NEXT</button>
 
             <div class="container px-4 text-center mt-3">
                 <div class="row gx-5">
@@ -58,13 +63,28 @@
     $(document).ready(function () {
         $(".background_loading").css("display", "block");
 
+        var vid = document.getElementById("frame_video");
+
+        function enableAutoplay() {
+            vid.autoplay = true;
+            vid.load();
+        }
+
+        $('#autoplay').on('click', function () {
+            enableAutoplay()
+        })
+
         API_takeVideo();
 
         function API_takeVideo() {
             axios.get('http://127.0.0.1:5000/api/render/5acts2video')
                 .then((response) => {
-                    $('#frame_video').attr('src', 'http://127.0.0.1:5000/' + response.data.message)
+                    $('#_video').attr('src', 'http://127.0.0.1:5000/' + response.data.message)
                     $(".background_loading").css("display", "none");
+
+                    setTimeout(function () {
+                        $('#autoplay').click();
+                    }, 5000);
                 })
                 .catch((error) => {
                     console.log({
