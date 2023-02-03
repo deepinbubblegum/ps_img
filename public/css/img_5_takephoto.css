@@ -27,7 +27,8 @@
     width: 30rem !important;
     height: 30rem !important;
     padding: 8rem;
-    background: #fff;
+    /* background: #fff; */
+    background: #ffffff61;
     border: 1rem solid #666;
     color: #666;
     text-align: center !important;
@@ -70,4 +71,17 @@
 
 .img_big_3 {
     height: 370px;
+}
+
+
+
+.img_background_Mjpeg {
+    position: absolute;
+    /* height: 100vh; */
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

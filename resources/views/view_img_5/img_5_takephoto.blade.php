@@ -17,12 +17,14 @@
 
     @include('component.loading')
 
+    <img src="http://127.0.0.1:5000/api/camera/liveview" class="img_background_Mjpeg">
+
     <div class="container-fluid">
 
         <div class="d-flex justify-content-center">
             <div class="numberCircle text-center"
                 style="font-size: 11rem; margin-top: 8rem; font-weight: bolder; cursor: pointer;" id="btn_upload_img">
-                <span id="text_show"> </span>
+                <span id="text_show" style="color: black;"> </span>
                 <input type="file" id="btn_upload_file" class="d-none" accept="image/png, image/jpeg" multiple>
             </div>
         </div>
@@ -90,11 +92,21 @@
         let take_img = 0;
         $(".background_loading").css("background-color", "#ece8e8ed")
 
+        axios.all([
+                axios.get(`http://127.0.0.1:5000/api/camera/clear/tmp`),
+                axios.get(`http://127.0.0.1:5000/api/camera/clear/images`),
+                axios.get(`http://127.0.0.1:5000/api/camera/clear/videos`),
+            ])
+            .then(axios.spread((data1, data2) => {
+                // output of req.
+                // window.location = `{{ url('/img_5_takephoto') }}`;
+            }));
+
         // var refreshIntervalId = setInterval(function () {
         //     main()
         // }, 1000);
         var refreshIntervalId = null
-        // refreshIntervalId = setInterval(main, 1000);
+        refreshIntervalId = setInterval(main, 1000);
 
 
         function main() {
@@ -120,7 +132,7 @@
             take_img++
             $(".background_loading").css("display", "block");
 
-            axios.get('http://127.0.0.1:5000/take-picture')
+            axios.get('http://127.0.0.1:5000/api/camera/capture')
                 // axios.post('/take')
                 .then((response) => {
                     // console.log(response.data.message)

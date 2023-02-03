@@ -83,13 +83,11 @@
                 </div>
             </div>
 
-
             <div class="col-4 ">
                 <div class="rotate-col-three">
                     <img src="" class="img-fluid img_big_3 preview_1" id="preview_1">
                 </div>
             </div>
-
 
         </div>
     </div>
@@ -119,7 +117,7 @@
         API_SaveImg();
 
         function API_SaveImg() {
-            axios.get('http://127.0.0.1:5000/save-2storage')
+            axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
                 .then((response) => {
                     API_takeImg(response.data.message);
                 })

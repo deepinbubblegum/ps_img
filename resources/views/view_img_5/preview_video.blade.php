@@ -61,7 +61,7 @@
         API_takeVideo();
 
         function API_takeVideo() {
-            axios.get('http://127.0.0.1:5000/render-5acts-video')
+            axios.get('http://127.0.0.1:5000/api/render/5acts2video')
                 .then((response) => {
                     $('#frame_video').attr('src', response.data.message)
                     $(".background_loading").css("display", "none");
@@ -75,16 +75,9 @@
         }
 
         $('#icon_camera').on('click', function () {
-            axios.get('http://127.0.0.1:5000/retake-picture')
-                .then((response) => {
-                    window.location = `{{ url('/img_5_takephoto') }}`;
-                })
-                .catch((error) => {
-                    console.log({
-                        ...error
-                    })
-                })
+
         })
+
 
     })
 
