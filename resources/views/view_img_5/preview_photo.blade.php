@@ -132,7 +132,7 @@
             for (let i = 1; i < 6; i++) {
                 let class_n = `.preview_${i}`
                 $(class_n).each(function () {
-                    url = `${data}`
+                    url = `http://127.0.0.1:5000/${data}`
                     getBase64FromUrl(url).then((base64) => {
                         $(this).attr('src', base64)
                     });

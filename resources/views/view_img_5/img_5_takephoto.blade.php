@@ -136,7 +136,7 @@
                 // axios.post('/take')
                 .then((response) => {
                     // console.log(response.data.message)
-                    url = `${response.data.message}`
+                    url = `http://127.0.0.1:5000/${response.data.message}`
                     $(`#preview_${take_img}`).attr('src', url)
                     $(`#preview_${take_img}`).removeClass("d-none");
                     $(`#preview_txt_${take_img}`).addClass("d-none");
