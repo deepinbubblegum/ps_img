@@ -117,8 +117,8 @@
 <script>
     $(document).ready(function () {
 
-        $(".background_loading").css("display", "block");
-        API_SaveImg();
+        // $(".background_loading").css("display", "block");
+        // API_SaveImg();
 
         function API_SaveImg() {
             axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
@@ -200,14 +200,32 @@
         }
 
         $('#cmd').click(function () {
-            CreatePDFfromHTML()
+            // CreatePDFfromHTML()
 
             $(".background_loading").css("display", "block");
 
-            setTimeout(function () {
-                // your_func();
-            }, 5000);
+            call_print()
+
         });
+
+        function call_print() {
+            axios.get(' http://127.0.0.1:5000/api/printer/send/5acts_2image10.jpg')
+                .then((response) => {
+                    // API_takeImg(response.data.message);
+                    $(".background_loading").css("display", "none");
+
+                    setTimeout(function () {
+                        // your_func();
+                        window.location = '{{ url("/emoji") }}';
+                    }, 5000);
+                })
+                .catch((error) => {
+                    $(".background_loading").css("display", "none");
+                    console.log({
+                        ...error
+                    })
+                })
+        }
 
 
     })

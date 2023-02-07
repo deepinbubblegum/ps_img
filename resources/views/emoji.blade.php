@@ -35,9 +35,14 @@
 <script>
     $(document).ready(function () {
 
-        $('#icon_camera').on('click', function () {
-            window.location = `{{ url('/img_5_takephoto') }}`;
-        })
+        setTimeout(function () {
+            // your_func();
+            window.location = '{{ url("/") }}';
+        }, 5000);
+
+        // $('#icon_camera').on('click', function () {
+        //     window.location = `{{ url('/img_5_takephoto') }}`;
+        // })
 
     })
 
