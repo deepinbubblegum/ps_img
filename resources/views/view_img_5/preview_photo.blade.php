@@ -118,7 +118,7 @@
     $(document).ready(function () {
 
         // $(".background_loading").css("display", "block");
-        // API_SaveImg();
+        API_SaveImg();
 
         function API_SaveImg() {
             axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
