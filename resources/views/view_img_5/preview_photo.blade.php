@@ -118,7 +118,7 @@
     $(document).ready(function () {
 
         // $(".background_loading").css("display", "block");
-        // API_SaveImg();
+        API_SaveImg();
 
         function API_SaveImg() {
             axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
@@ -126,6 +126,11 @@
                     // API_takeImg(response.data.message);
                     $(`#preview_`).attr('src', `http://127.0.0.1:5000/${response.data.message}`)
                     $(".background_loading").css("display", "none");
+                    axios.get('http://127.0.0.1:5000/api/push2/server').then((response) => {
+                        console.log('response')
+                    }).catch((error) => {
+                        console.log('error')
+                    })
                 })
                 .catch((error) => {
                     console.log({
