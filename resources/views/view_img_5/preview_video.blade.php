@@ -79,7 +79,7 @@
         function API_takeVideo() {
             axios.get('http://127.0.0.1:5000/api/render/5acts2video')
                 .then((response) => {
-                    $('#_video').attr('src', 'http://127.0.0.1:5000/' + response.data.message)
+                    $('#_video').attr('src', 'http://127.0.0.1:5000/' + response.data.message + '?t=' + new Date().getTime());
                     $(".background_loading").css("display", "none");
 
                     setTimeout(function () {
