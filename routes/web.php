@@ -20,8 +20,18 @@ Route::get('/mobile', function () {
     return view('mobile');
 });
 
-
 Route::get('/', function () {
+    // return view('welcome');
+    // return view('view_img_5.home');
+    return view('view_signin.welcome');
+});
+
+Route::get('/qrscan', function () {
+    // return view('welcome');
+    return view('view_signin.qrscan_signin');
+});
+
+Route::get('/home', function () {
     // return view('welcome');
     return view('view_img_5.home');
 });

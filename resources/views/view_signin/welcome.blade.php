@@ -20,7 +20,7 @@
     <div class="centered text-center">
         {{-- <i class="fas fa-camera" style="font-size: 10em;"></i> --}}
         <div id="icon_camera" style="cursor: pointer;">
-            @include('component.camera')
+            @include('component.qrscan')
         </div>
 
     </div>
@@ -35,17 +35,22 @@
 
 <script>
     $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            url: "http://127.0.0.1:5000/api/camera/liveview/stop",
-            dataType: "json",
-            success: function (response) {
-                console.log(response);
-            }
-        });
+
+        function clearCode() {
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:5000/api/camera/scan/qrcode/clear",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    window.location = `{{ url('/qrscan') }}`;
+                }
+            });
+        }
 
         $('#icon_camera').on('click', function () {
-            window.location = `{{ url('/img_5_takephoto') }}`;
+            // window.location = `{{ url('/qrscan') }}`;
+            clearCode();
         })
 
     })

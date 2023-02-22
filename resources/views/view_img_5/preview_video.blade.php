@@ -61,6 +61,15 @@
 
 <script>
     $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:5000/api/camera/liveview/stop",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+            }
+        });
+
         $(".background_loading").css("display", "block");
 
         var vid = document.getElementById("frame_video");
