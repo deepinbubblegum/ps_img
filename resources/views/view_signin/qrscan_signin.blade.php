@@ -35,7 +35,7 @@
                 dataType: "json",
                 success: function (response) {
                     if (response.status == 'ok') {
-                        window.location = `{{ url('/home') }}`;
+                        window.location = `{{ url('/img_5_takephoto') }}`;
                     }
                 }
             });

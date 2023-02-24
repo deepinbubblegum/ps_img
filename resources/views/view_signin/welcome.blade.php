@@ -35,6 +35,14 @@
 
 <script>
     $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "http://127.0.0.1:5000/api/camera/liveview/stop",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+            }
+        });
 
         function clearCode() {
             $.ajax({
