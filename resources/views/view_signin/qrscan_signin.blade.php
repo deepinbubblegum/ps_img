@@ -33,9 +33,16 @@
                 type: "GET",
                 url: "http://127.0.0.1:5000/api/camera/scan/check",
                 dataType: "json",
-                success: function (response) {
+                success: function(response) {
                     if (response.status == 'ok') {
-                        window.location = `{{ url('/img_5_takephoto') }}`;
+                        $.ajax({
+                            type: "GET",
+                            url: "http://127.0.0.1:5000/api/camera/liveview/stop",
+                            dataType: "json",
+                            success: function(response) {
+                                window.location = `{{ url('/img_5_takephoto') }}`;
+                            }
+                        });
                     }
                 }
             });
