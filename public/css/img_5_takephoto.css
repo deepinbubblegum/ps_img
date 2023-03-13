@@ -36,7 +36,7 @@
 }
 
 .img_set_size {
-    height: auto;
+    height: 185px;
     width: 330px;
     object-fit: contain;
     margin: auto;
