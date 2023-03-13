@@ -24,7 +24,7 @@
         <div class="d-flex justify-content-center">
             <div class="numberCircle text-center"
                 style="font-size: 11rem; margin-top: 8rem; font-weight: bolder; cursor: pointer;" id="btn_upload_img">
-                <span id="text_show" style="color: black;"> </span>
+                <span id="text_show" class="text_show" > </span>
                 <input type="file" id="btn_upload_file" class="d-none" accept="image/png, image/jpeg" multiple>
             </div>
         </div>
@@ -35,7 +35,7 @@
             <div class="col">
                 <div class="card bg_template_img">
                     <img src="" class="card-img-top d-none img_set_size" id="preview_1">
-                    <div class="text-center p-3 text_template_img" id="preview_txt_1">
+                    <div class="text-center p-1 text_template_img" id="preview_txt_1">
                         1
                     </div>
                 </div>
@@ -43,7 +43,7 @@
             <div class="col">
                 <div class="card bg_template_img">
                     <img src="" class="card-img-top d-none img_set_size" id="preview_2">
-                    <div class="text-center p-3 text_template_img" id="preview_txt_2">
+                    <div class="text-center p-1 text_template_img" id="preview_txt_2">
                         2
                     </div>
                 </div>
@@ -51,7 +51,7 @@
             <div class="col">
                 <div class="card bg_template_img">
                     <img src="" class="card-img-top d-none img_set_size" id="preview_3">
-                    <div class="text-center p-3 text_template_img" id="preview_txt_3">
+                    <div class="text-center p-1 text_template_img" id="preview_txt_3">
                         3
                     </div>
                 </div>
@@ -59,7 +59,7 @@
             <div class="col">
                 <div class="card bg_template_img">
                     <img src="" class="card-img-top d-none img_set_size" id="preview_4">
-                    <div class="text-center p-3 text_template_img" id="preview_txt_4">
+                    <div class="text-center p-1 text_template_img" id="preview_txt_4">
                         4
                     </div>
                 </div>
@@ -67,7 +67,7 @@
             <div class="col">
                 <div class="card bg_template_img">
                     <img src="" class="card-img-top d-none img_set_size" id="preview_5">
-                    <div class="text-center p-3 text_template_img" id="preview_txt_5">
+                    <div class="text-center p-1 text_template_img" id="preview_txt_5">
                         5
                     </div>
                 </div>

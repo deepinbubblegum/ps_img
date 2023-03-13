@@ -96,9 +96,9 @@
 
     <div id="editor"></div>
     <div class="container">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
-            <button class="btn btn-lg" type="button" id="cmd"
-                style="background-color: #EB4335; color:white; font-size: 1.5rem; width:15%">
+        <div class="d-grid d-md-flex justify-content-md-end mt-3">
+            <button class="btn btn-lg p-3" type="button" id="cmd"
+                style="background-color: #EB4335; color:white; font-size: 1.7rem; width:15%">
                 <i class="fa-solid fa-print me-2 ms-2"></i>
                 Print
             </button>
@@ -121,6 +121,7 @@
         API_SaveImg();
 
         function API_SaveImg() {
+            $(".background_loading").css("display", "block");
             axios.get('http://127.0.0.1:5000/api/render/5acts2image10')
                 .then((response) => {
                     // API_takeImg(response.data.message);

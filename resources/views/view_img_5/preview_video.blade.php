@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    @include('component.loading')
 
     <div class="centered text-center">
         <div class="container">
@@ -35,7 +36,7 @@
             <div class="container px-4 text-center mt-3">
                 <div class="row gx-5">
                     <div class="col text-start px-0">
-                        <button type="button" class="btn btn-secondary btn-lg w-100" id="icon_camera">
+                        <button type="button" class="btn btn-secondary btn-lg w-100 p-3" id="icon_camera">
                             Retake
                         </button>
                     </div>
@@ -44,7 +45,7 @@
                     </div>
                     <div class="col text-end px-0">
                         <button type="button" onclick="window.location='{{ url("/preview_photo") }}'"
-                            class="btn btn-primary btn-lg w-100">NEXT</button>
+                            class="btn btn-primary btn-lg w-100 p-3">NEXT</button>
                     </div>
                 </div>
             </div>
@@ -61,6 +62,8 @@
 
 <script>
     $(document).ready(function () {
+        $(".background_loading").css("display", "block");
+
         $.ajax({
             type: "GET",
             url: "http://127.0.0.1:5000/api/camera/liveview/stop",

@@ -29,8 +29,8 @@
     padding: 8rem;
     /* background: #fff; */
     background: #ffffff61;
-    border: 1rem solid #666;
-    color: #666;
+    border: 1rem solid #a1a1a1;
+    color: #a1a1a1;
     text-align: center !important;
     font: 10rem Arial, sans-serif;
 }
@@ -84,4 +84,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.text_show  {
+    color: #0000009e;
 }
