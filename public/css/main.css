@@ -1,8 +1,8 @@
 .bg_template_img {
     background-color: #d9d9d900;
     color: #EB4335;
-    width: auto;
-    height: auto;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     justify-content: center;
 }
