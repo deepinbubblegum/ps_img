@@ -1,6 +1,7 @@
 .bg_template_img {
     background-color: #d9d9d900;
-    color: #EB4335;
+    /* color: #EB4335; */
+    color: #fff;
     width: 330px;
     height: auto;
     display: flex;
