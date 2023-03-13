@@ -40,7 +40,7 @@
                             url: "http://127.0.0.1:5000/api/camera/liveview/stop",
                             dataType: "json",
                             success: function(response) {
-                                window.location = `{{ url('/img_5_takephoto') }}`;
+                                window.location = `{{ url('/home') }}`;
                             }
                         });
                     }
