@@ -24,7 +24,7 @@
 
     <div class="container text-center mt-5">
 
-        {{-- @include('component.loading') --}}
+        @include('component.loading')
 
         <div class="container" style="background-color: #D9D9D9; width: 1200px; height: 800px;" id="div_pdf">
 

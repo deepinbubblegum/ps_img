@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    {{-- @include('component.loading') --}}
+    @include('component.loading')
 
     <div class="centered text-center">
         <div class="container">
