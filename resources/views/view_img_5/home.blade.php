@@ -15,7 +15,7 @@
 
 <body>
 
-    @include('templates.menuBar')
+    {{-- @include('templates.menuBar') --}}
 
     <div class="centered text-center">
         {{-- <i class="fas fa-camera" style="font-size: 10em;"></i> --}}
