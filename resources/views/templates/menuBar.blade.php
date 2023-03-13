@@ -5,7 +5,7 @@
         </span>
         <ul class="dropdown-menu" style="margin-top: 10px;">
             <li>
-                <a href="{{ url('/') }}" class="dropdown-item" type="button" href="/">
+                <a href="{{ url('/home') }}" class="dropdown-item" type="button" href="/">
                     OneX : 5Acts Photo Kiosk
                 </a>
             </li>
