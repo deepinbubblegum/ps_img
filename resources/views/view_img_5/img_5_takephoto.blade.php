@@ -34,7 +34,7 @@
         <div class="row row-cols-1 row-cols-md-5 g-2 ms-5 me-5" style="margin-top: 5rem">
             <div class="col">
                 <div class="card bg_template_img">
-                    <img src="" class="card-img-top d-none img_set_size" id="preview_1">
+                    <img src="" class="img-fluid card-img-top d-none img_set_size" id="preview_1">
                     <div class="text-center p-1 text_template_img" id="preview_txt_1">
                         1
                     </div>
@@ -42,7 +42,7 @@
             </div>
             <div class="col">
                 <div class="card bg_template_img">
-                    <img src="" class="card-img-top d-none img_set_size" id="preview_2">
+                    <img src="" class="img-fluid card-img-top d-none img_set_size" id="preview_2">
                     <div class="text-center p-1 text_template_img" id="preview_txt_2">
                         2
                     </div>
@@ -50,7 +50,7 @@
             </div>
             <div class="col">
                 <div class="card bg_template_img">
-                    <img src="" class="card-img-top d-none img_set_size" id="preview_3">
+                    <img src="" class="img-fluid card-img-top d-none img_set_size" id="preview_3">
                     <div class="text-center p-1 text_template_img" id="preview_txt_3">
                         3
                     </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="col">
                 <div class="card bg_template_img">
-                    <img src="" class="card-img-top d-none img_set_size" id="preview_4">
+                    <img src="" class="img-fluid card-img-top d-none img_set_size" id="preview_4">
                     <div class="text-center p-1 text_template_img" id="preview_txt_4">
                         4
                     </div>
@@ -66,7 +66,7 @@
             </div>
             <div class="col">
                 <div class="card bg_template_img">
-                    <img src="" class="card-img-top d-none img_set_size" id="preview_5">
+                    <img src="" class="img-fluid card-img-top d-none img_set_size" id="preview_5">
                     <div class="text-center p-1 text_template_img" id="preview_txt_5">
                         5
                     </div>

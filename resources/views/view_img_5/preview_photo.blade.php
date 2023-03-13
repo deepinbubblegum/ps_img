@@ -24,7 +24,7 @@
 
     <div class="container text-center mt-5">
 
-        @include('component.loading')
+        {{-- @include('component.loading') --}}
 
         <div class="container" style="background-color: #D9D9D9; width: 1200px; height: 800px;" id="div_pdf">
 
@@ -98,7 +98,7 @@
     <div class="container">
         <div class="d-grid d-md-flex justify-content-md-end mt-3">
             <button class="btn btn-lg p-3" type="button" id="cmd"
-                style="background-color: #EB4335; color:white; font-size: 1.7rem; width:15%">
+                style="background-color: #EB4335; color:white; font-size: 1.8rem; width:30%">
                 <i class="fa-solid fa-print me-2 ms-2"></i>
                 Print
             </button>
