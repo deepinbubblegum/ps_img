@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body style="overflow-y: hidden;">
 
     <div class="container text-center mt-5">
 
@@ -28,82 +28,18 @@
 
         <div class="container" style="background-color: #D9D9D9; width: 1200px; height: 800px;" id="div_pdf">
 
-            <img src="" class="img-fluid p-2 preview_ img_api" id="preview_">
-            {{-- <div class="row">
-
-                <div class="col-4" style="margin-top: 2.7rem; padding: 4rem!important;">
-                    @for ($i = 1; $i < 6; $i++) <div class="row mt-1">
-                        <div class="col col_img">
-                            <img src="" class="img-fluid preview_{{$i}}" id="preview_{{$i}}">
-        </div>
-        <div class="col col_img">
-            <img src="" class="img-fluid preview_{{$i}}" id="preview_{{$i}}">
-        </div>
-    </div>
-    @endfor
-    <div class="row mt-1">
-        <div class="col">
-            <div class="card">
-                <img src="" class="card-img-bottom" id="preview_qr">
-            </div>
-        </div>
-        <div class="col">
-
-        </div>
-    </div>
-    </div>
-
-
-    <div class="col-4">
-        <div class="row rotate-col-two">
-            <div class="col">
-                <div class="row">
-                    <span class="col-12 p-0">
-                        <img src="" class="img-fluid img_big_2 preview_2" id="preview_2">
-                    </span>
-                    <span class="col-6 p-0 mt-1">
-                        <img src="" class="img-fluid img_small_2 preview_3" id="preview_3">
-                    </span>
-                    <span class="col-6 p-0 mt-1">
-                        <img src="" class="img-fluid img_small_2 preview_4" id="preview_4">
-                    </span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <span class="col-6 p-0 mb-1">
-                        <img src="" class="img-fluid img_small_2 preview_4" id="preview_4">
-                    </span>
-                    <span class="col-6 p-0 mb-1">
-                        <img src="" class="img-fluid img_small_2 preview_5" id="preview_5">
-                    </span>
-                    <span class="col-12 p-0">
-                        <img src="" class="img-fluid img_big_2 preview_3" id="preview_3">
-                    </span>
-                </div>
-            </div>
+            <img src="" class="img-fluid p-2 preview_ img_api"   id="preview_">
         </div>
     </div>
 
-    <div class="col-4 ">
-        <div class="rotate-col-three">
-            <img src="" class="img-fluid img_big_3 preview_1" id="preview_1">
-        </div>
-    </div> --}}
-
-    </div>
-    </div>
-
-    <div id="editor"></div>
     <div class="container">
-        <div class="d-grid d-md-flex justify-content-md-end mt-3">
+        <div class="d-grid d-md-flex justify-content-md-end mt-3" style="width: 1250px;">
             <button class="btn btn-lg p-3" type="button" id="cmd"
                 style="background-color: #EB4335; color:white; font-size: 1.8rem; width:30%">
                 <i class="fa-solid fa-print me-2 ms-2"></i>
                 Print
             </button>
         </div>
-    </div>
     </div>
 
     <div class="footered text-center">
