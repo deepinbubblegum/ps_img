@@ -22,8 +22,8 @@ Route::get('/mobile', function () {
 
 Route::get('/', function () {
     // return view('welcome');
-    // return view('view_img_5.home');
-    return view('view_signin.welcome');
+    return view('view_img_5.home');
+    // return view('view_signin.welcome');
 });
 
 Route::get('/qrscan', function () {

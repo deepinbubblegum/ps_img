@@ -26,7 +26,7 @@
 
         @include('component.loading')
 
-        <div class="container" style="background-color: #D9D9D9; width: 1200px; height: 800px;" id="div_pdf">
+        <div class="container" style="width: 1200px; height: 800px;" id="div_pdf">
 
             <img src="" class="img-fluid p-2 preview_ img_api"   id="preview_">
         </div>
